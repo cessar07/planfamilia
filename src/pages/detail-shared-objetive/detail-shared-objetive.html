@@ -1,0 +1,148 @@
+<!--
+  Generated template for the DetailPErsonalObPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-8>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding id="grid_title">
+            <ion-row no-padding align-items-center>
+                <ion-col col-2></ion-col>
+                <ion-col col-2 text-right>
+                    <img src="../../assets/imgs/objpersonales.png" alt="" id="img_title">
+                </ion-col>
+                <ion-col col-8 text-left id="text_title">
+                    Objetivo personal
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div>
+    	<ion-grid no-padding>
+            <ion-row no-padding padding-left align-items-center>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                    	Fecha de creación 
+                    </h4>
+                    <h6 class="detail_description">
+                    	{{ s.format_create_date }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                    	Título
+                    </h4>
+                    <h6 class="detail_description">
+                    	{{ s.name }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                    	Descripción
+                    </h4>
+                    <h6 class="detail_description">
+                    	{{ s.description }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                        Periodicidad
+                    </h4>
+                    <h6 class="detail_description">
+                        {{ s.period }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                    	Fecha del objetivo
+                    </h4>
+                    <h6 class="detail_description">
+                    	{{ s.format_date }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                    	Estatus
+                    </h4>
+                    <h6 class="detail_description">
+                    	{{ s.statusText }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                    	Fecha de culminación
+                    </h4>
+                    <h6 class="detail_description">
+                    	{{ s.format_complete_date }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left>
+                    <h4 class="detail_title">
+                    	Compartido con:
+                    </h4>
+                    <h6 class="detail_description" *ngFor="let f of s.family">
+                    	-{{ f.userInfo.name }}
+                    </h6>
+                </ion-col>
+                <ion-col col-12 text-left *ngIf="userDetails && userDetails.younger == 1 || s.act_res">
+                    <h4 class="detail_title">
+                        Creado por:
+                    </h4>
+                    <h6 class="detail_description" *ngIf="s.resInfo">
+                        -{{ s.resInfo.name }}
+                    </h6>
+                    <h6 class="detail_description" *ngIf="s.act_res">
+                        -{{ s.act_res.name }}
+                    </h6>
+                </ion-col>
+            </ion-row>
+            <ion-row padding-left padding-right *ngIf="!s.act_res && userDetails.younger != 1">
+                <ion-col col-12 text-center>
+                    <button ion-button type="button" (click)="ShaOb()" block id="b_d">Eliminar objetivo</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div id="las_pu">
+        <ion-grid no-padding id="grid3">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

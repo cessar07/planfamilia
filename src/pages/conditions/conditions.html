@@ -1,0 +1,68 @@
+<!--
+  Generated template for the ConditionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-8>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div>
+    	<ion-grid padding>
+            <ion-row no-padding align-items-center class="row_text">
+            	<ion-col col-12 text-justify>
+            		<h4 *ngIf="c">
+            			<b>{{ c.title }}</b>
+            		</h4>
+            		<p [innerHTML]="c.content" *ngIf="c"></p>
+                    <h4 *ngIf="!c">
+                        <b>Términos y condiciones</b>
+                    </h4>
+                    <p *ngIf="!c">Sin contenido</p>
+            	</ion-col>
+            	<div class="space"></div>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div id="las_pu">
+        <ion-grid no-padding id="grid3">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

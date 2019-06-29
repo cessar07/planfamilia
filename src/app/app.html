@@ -1,0 +1,105 @@
+ <ion-menu [content]="content">
+  <ion-header id="user_name">
+    <ion-toolbar text-center>
+      <img src="../assets/imgs/avatar0.png" class="img_avatar_ap" width="50" *ngIf="userDetails && !userDetails.avatar">
+      <img src="{{ userDetails.avatar }}" class="img_avatar_ap" width="50" *ngIf="userDetails && userDetails.avatar">
+      <!-- <div style="background-image: url('../assets/imgs/avatar0.png')" *ngIf="userDetails && !userDetails.avatar" class="div_av"></div>
+      <div style="background-image: url({{ userDetails.avatar }})" *ngIf="userDetails && userDetails.avatar" class="div_av"></div> -->
+      <ion-title *ngIf="userDetails">{{userDetails.name}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content id="content-menu">
+    <ion-list>
+      <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button> -->
+        <hr class="hr-white">
+        <ion-item menuClose (click)="calendar()" *ngIf="userDetails && userDetails.younger != 1">
+            <img src="../assets/imgs/calendario.png" class="img_menu"> <span class="span_menu">Calendario</span>
+        </ion-item>
+        <ion-item menuClose (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+            <img src="../assets/imgs/calendario.png" class="img_menu"> <span class="span_menu">Calendario</span>
+        </ion-item>
+        <ion-item menuClose (click)="personalOb()" *ngIf="userDetails && userDetails.younger != 1">
+            <img src="../assets/imgs/objpersonales.png" class="img_menu"> <span class="span_menu">Objetivos personales</span>
+        </ion-item>
+        <ion-item menuClose (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+            <img src="../assets/imgs/objpersonales.png" class="img_menu"> <span class="span_menu">Objetivos personales</span>
+        </ion-item>
+        <ion-item menuClose (click)="sharedOb()">
+            <img src="../assets/imgs/objcompartidos.png" class="img_menu"> <span class="span_menu">Objetivos compartidos</span>
+        </ion-item>
+        <ion-item menuClose (click)="notes()" *ngIf="userDetails && userDetails.younger != 1">
+            <img src="../assets/imgs/notas.png" class="img_menu"> <span class="span_menu">Notas</span>
+        </ion-item>
+        <ion-item menuClose (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+            <img src="../assets/imgs/notas.png" class="img_menu"> <span class="span_menu">Notas</span>
+        </ion-item>
+        <ion-item menuClose (click)="lists()" *ngIf="userDetails && userDetails.younger != 1">
+            <img src="../assets/imgs/notas.png" class="img_menu"> <span class="span_menu">listas</span>
+        </ion-item>
+        <ion-item menuClose (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+            <img src="../assets/imgs/notas.png" class="img_menu"> <span class="span_menu">listas</span>
+        </ion-item>
+        <hr class="hr-white-2">
+        <ion-item menuClose (click)="blog()">
+            <img src="../assets/imgs/blog.png" class="img_menu"> <span class="span_menu">Blog</span>
+        </ion-item>
+        <hr class="hr-white-2">
+        <ion-item menuClose (click)="notifications()">
+            <img src="../assets/imgs/notificacion.png" class="img_menu"> <span class="span_menu">Notificaciones</span>
+        </ion-item>
+        <hr class="hr-white-2">
+        <ion-item menuClose (click)="about()">
+            <img src="../assets/imgs/info.png" class="img_menu"> <span class="span_menu">Acerca de</span>
+        </ion-item>
+        <ion-item menuClose (click)="help()" *ngIf="userDetails && userDetails.younger != 1">
+            <img src="../assets/imgs/ayuda.png" class="img_menu"> <span class="span_menu">Ayuda</span>
+        </ion-item>
+        <ion-item menuClose (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+            <img src="../assets/imgs/ayuda.png" class="img_menu"> <span class="span_menu">Ayuda</span>
+        </ion-item>
+        <hr class="hr-white-2">
+        <ion-item menuClose (click)="privacy()">
+            <img src="../assets/imgs/docto.png" class="img_menu"> <span class="span_menu">Política de privacidad</span>
+        </ion-item>
+        <ion-item menuClose (click)="conditions()">
+            <img src="../assets/imgs/docto.png" class="img_menu"> <span class="span_menu">Términos y condiciones</span>
+        </ion-item>
+        <ion-item menuClose (click)="logout()" *ngIf="userDetails && userDetails.younger != 1">
+            <span>Salir</span>
+        </ion-item>
+        <ion-item menuClose (click)="actBlock2()" *ngIf="userDetails && userDetails.younger == 1">
+            <span>Salir</span>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<!-- <div style="position: fixed; width: 100vw; background-color: red; bottom: 0;">
+    <img [src]="'https://cdn.shopify.com/s/files/1/0018/4821/3577/files/Banners-Horizontal_2048x2048.jpg?v=1542045541'" alt="">
+</div> -->
+<div id="las_pu_fixed" *ngIf="srcIVerify">
+    <ion-grid no-padding id="grid3">
+        <ion-row no-padding align-items-center>
+            <ion-col col-3 id="pad-5">
+                <p>Nice job</p>
+            </ion-col>
+            <ion-col class="div_img" id="bot_food" col-6 [innerHTML]="banner.code" *ngIf="banner">
+                <!-- <a [href]="banner.link" target="_blank"><img [src]="srcI" style="max-width: 100%" /></a> -->
+            </ion-col>
+            <ion-col class="div_img" id="bot_food" col-6 *ngIf="!banner">
+                <!-- <a [href]="banner.link" target="_blank"><img [src]="srcI" style="max-width: 100%" /></a> -->
+            </ion-col>
+            <ion-col class="div_img" col-3>
+                <span style="position: absolute;top: 0;right: 10px;" (click)="removeAdd()">X</span>
+                <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>

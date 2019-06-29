@@ -1,0 +1,44 @@
+<!--
+  Generated template for the VerifycodePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding id="bod">
+    <ion-grid>
+        <ion-row no-padding align-items-center>
+        	<ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-10>
+                <img src="../../assets/imgs/logo.png">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid >
+        <div class="ht"></div>
+        <ion-row align-items-center>
+            <ion-col text-center>
+                <!-- <button ion-button full color="lightText" (click)="login()">Ingresar</button> -->
+                <p>
+                	Tu cuenta ha sido creada exitosamente! <br>
+                	Ahora solo queda activarla, Ingresa el codigo que hemos enviado a tu email, ten en cuenta que puede tardar un poco en llegar.
+                </p>
+                <form (ngSubmit)="activate()" id="form-activate">
+                    <div class="space"></div>
+                    <ion-item class="input_form_new">
+                        <ion-label class="label_form">
+                            <img src="../../assets/imgs/email.png" alt="">
+                        </ion-label>
+                        <ion-input type="text" name="code" placeholder="Codigo de confirmación"></ion-input>
+                    </ion-item>
+					<ion-input type="hidden" name="user_id" value="{{ id }}"></ion-input>
+					<div class="space"></div>
+                    <button ion-button type="submit" block color="secondary" class="no_sha">Activar cuenta</button>
+                    <div class="space"></div>
+                    <button ion-button type="button" (click)="resendCodeConfirm()" block color="primary" class="no_sha">Reenviar codigo</button>
+                </form> 
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

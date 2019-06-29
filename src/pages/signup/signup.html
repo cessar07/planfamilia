@@ -1,0 +1,64 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding id="bod">
+    <ion-grid>
+        <ion-row no-padding align-items-center>
+        	<ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-10>
+                <img src="../../assets/imgs/logo.png">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid >
+        <div class="ht"></div>
+        <ion-row align-items-center>
+            <ion-col text-center>
+                <!-- <button ion-button full color="lightText" (click)="login()">Ingresar</button> -->
+                <form (ngSubmit)="singUp()" id="form-register">
+                    <div class="space"></div>
+                    <ion-item class="input_form_new">
+                        <ion-label class="label_form">
+                            <img src="../../assets/imgs/email.png" alt="">
+                        </ion-label>
+                        <ion-input type="email" name="email" placeholder="Email"></ion-input>
+                    </ion-item>
+                    <div class="space"></div>
+                    <ion-item class="input_form_new">
+                        <ion-label class="label_form">
+                            <img src="../../assets/imgs/usuariogris.png" alt="">
+                        </ion-label>
+                        <ion-input type="text" name="name" placeholder="Tu nombre"></ion-input>
+                    </ion-item>
+                    <div class="space"></div>
+                    <ion-item class="input_form_new">
+                        <ion-label class="label_form">
+                            <img src="../../assets/imgs/candado.png" alt="">
+                        </ion-label>
+                        <ion-input type="password" name="password" placeholder="Contraseña"></ion-input>
+                    </ion-item>
+                    <div class="space"></div>
+                    <ion-item class="input_form_new">
+                        <ion-label class="label_form">
+                            <img src="../../assets/imgs/candado.png" alt="">
+                        </ion-label>
+                        <ion-input type="password" name="password_confirm" placeholder="Confirma tu contraseña"></ion-input>
+                    </ion-item>
+                    <div class="space"></div>
+                    <ion-item class="item_text">
+					    <ion-label position="floating">Acepto los términos y condiciones</ion-label>
+					    <ion-checkbox class="n-m" [(ngModel)]="accept"  [ngModelOptions]="{standalone: true}"></ion-checkbox>
+					</ion-item>
+					<ion-input type="hidden" name="accept" value="{{ accept }}"></ion-input>
+					<div class="space"></div>
+                    <button ion-button type="submit" block color="secondary" class="no_sha">Registrame</button>
+                </form> 
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

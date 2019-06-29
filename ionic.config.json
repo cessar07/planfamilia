@@ -1,0 +1,7 @@
+{
+  "name": "familiaapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

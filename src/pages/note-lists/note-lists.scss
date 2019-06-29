@@ -1,0 +1,52 @@
+page-note-lists {
+	#no_results{
+		height:300px;
+	}
+
+	.grid_bojetives{
+		padding-top: 0px !important;
+		padding-bottom: 10px !important;
+		margin-bottom: 10px;
+		background-color: rgba(254, 249, 205 , .7);
+	}
+	#b_add{
+		background-color: transparent;
+	}
+	.date_ob{
+		margin-bottom: 0px;
+		color:#007794;
+	}
+
+	.title_ob{
+		margin-top: 0px;
+    	margin-bottom: 0px;
+    	color: #999;
+	}
+
+	.text-danger{
+		color: #FA8254;
+	}
+
+	.text-success{
+		color:#73B75D;
+	}
+
+	.p_items{
+		margin-bottom: 0px;
+    	margin-top: 0px;
+	}
+
+	.hidde{
+		display: none;
+	}
+
+	.text_v{
+		background-color: #007794;
+	}
+
+	hr{
+		height: 3.5px;
+    	width: 90%;
+    	background: rgba(0, 0, 0, 0.8) !important;
+	}
+}

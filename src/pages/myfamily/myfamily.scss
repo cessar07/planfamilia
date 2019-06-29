@@ -1,0 +1,45 @@
+page-myfamily {
+	.but_add{
+		width:60px;
+		height:60px;
+		border-radius:100%;
+		background:#3FBDEA;
+		right:0;
+		top:70px;
+		position:absolute;
+		margin-right:15px;
+		border:none;
+		outline:none;
+		color:#FFF;
+		font-size:36px;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		transition:.3s;
+	}
+
+	#no_results{
+		height: 270px;
+	}
+
+	.h4_name{
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	.row_family{
+		margin-bottom: 10px;
+	}
+
+	.img_avatar{
+		width: 90px;
+		height: 90px;
+		border-radius: 100%;
+	}
+
+	.img_fam{
+		width: 22%;
+    	margin-left: -30px;
+    	border-radius: 100%;
+    	background-color: #fff;
+    	border:solid 2px transparent;
+	}
+}

@@ -1,0 +1,36 @@
+page-blog {
+	.grid_news{
+		background-color: white;
+		margin-bottom: 10px;
+		border: solid 1px #999;
+		border-radius: 5px;
+		width: 94%;
+		margin-left: 3%;
+		padding-right: 15px !important;
+		padding-left: 15px !important;
+	}
+
+	.title_new{
+		font-size: 15px;
+		color: #000;
+	}
+	.new_date{
+		color: #999;
+		font-size: 13px;
+		margin-top: 10px;
+	}
+
+	.content_new{
+		font-size: 12px;
+		text-align: justify;
+		color: #999;
+	}
+
+	#no_results{
+		height:300px;
+	}
+
+	.no_s{
+		display: none;
+	}
+}

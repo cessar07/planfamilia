@@ -1,0 +1,32 @@
+page-personal-ob {
+	.grid_bojetives{
+		padding-top: 0px !important;
+		padding-bottom: 10px !important;
+		margin-bottom: 10px;
+		background-color: rgba(254, 249, 205 , .7);
+	}
+	#no_results{
+		height: 280px;
+	}
+	#b_add{
+		background-color: transparent;
+	}
+	.date_ob{
+		margin-bottom: 0px;
+		color:#007794;
+	}
+
+	.title_ob{
+		margin-top: 0px;
+    	margin-bottom: 0px;
+    	color: #999;
+	}
+
+	.text-danger{
+		color: #FA8254;
+	}
+
+	.text-success{
+		color:#73B75D;
+	}
+}

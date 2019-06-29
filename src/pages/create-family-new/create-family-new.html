@@ -1,0 +1,67 @@
+<!--
+  Generated template for the CreateFamilyNewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-8>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <ion-grid no-padding id="grid_title">
+        <ion-row no-padding align-items-center>
+            <ion-col col-3></ion-col>
+            <ion-col col-2 text-right>
+                <img src="../../assets/imgs/mifamilia.png" alt="" id="img_title">
+            </ion-col>
+            <ion-col col-7 text-left id="text_title">
+                Agregar familia
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div>
+    	<ion-grid padding>
+    		<ion-row>
+    			<ion-col col-12>
+    				<form (ngSubmit)="addFamilyNew()" id="form_add_family_new" enctype="multipart/form-data">
+				        <div class="space"></div>
+				        <ion-item class="item_form">
+				        	<ion-label class="label_form">
+				        		<img src="../../assets/imgs/usuariogris.png" alt="">
+				        	</ion-label>
+				        	<ion-input type="text" name="name" placeholder="Nombre de la famila"></ion-input>
+				      	</ion-item>
+				      	<ion-input type="hidden" name="user_id" value="{{ userDetails.id }}"></ion-input>
+				      	<div class="space"></div>
+				      	<button ion-button type="submit" block color="primary">Registrar familia</button>
+				    </form>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+</ion-content>

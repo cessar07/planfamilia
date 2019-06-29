@@ -1,0 +1,225 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.menu-inner{ 
+	width: 220px;
+	height: 90%;
+    top: 5%;
+	border-right: solid 1px white;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+}
+.toolbar-background-md{
+	background-color: #3FBDEA;
+}
+.toolbar-title-md{
+	color:white;
+	font-size: 13px;
+}
+.item-md{
+	background-color: #3FBDEA;
+	color: white;
+	font-size: 14px;
+	min-height: 2px;
+    height: 40px;
+}
+ion-label{
+	white-space: normal;
+}
+#content-menu{
+	background-color: #3FBDEA;
+}
+#user_name{
+	position: unset;
+}
+.hr-white{
+	background-color: white !important;
+	width: 90%;
+	height: 2px;
+	margin: auto;
+}
+.hr-white-2{
+	background-color: white !important;
+	width: 90%;
+	height: 1px;
+	margin: auto;
+}
+.list-md .item-block .item-inner{
+	border-bottom: none
+}
+#head{
+	background-color: #3FBDEA;
+}
+#login{
+	background-image: url('../assets/imgs/fondogris.jpg');
+	background-size: cover;
+	background-position: center;
+}
+#bod{
+	background-image: url('../../assets/imgs/fondogris.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 63%;
+}
+.back-button-icon{
+	color: white;
+}
+.img_menu{
+	position: absolute;
+	left: 16px;
+	width: 20px;
+}
+.span_menu{
+	margin-left: 30px
+}
+#img_user{
+	width: 50px;
+    border-radius: 100%;
+    height: 50px;
+}
+.img_icon{
+	width: 30%
+}
+#grid2{
+	border-bottom: solid 7px black;
+	border-top: solid 7px black;
+	padding-top: 7px;
+}
+#grid3{
+	border-bottom: solid 7px black;
+	border-top: solid 7px black;
+}
+#pad-5{
+	padding-left: 10px;
+	color:#488aff; 
+}
+.bar-buttons-md{
+	background: transparent;
+    box-shadow: none;
+    font-size: 3em;
+    padding: 0px;
+}
+.div_img{
+	text-align: center
+}
+.logo_imm{
+	width: 200px;
+	height: 60px;
+}
+#las_pu{
+	background:white;
+	display:none
+}
+.back-button{
+	display:inline-block;
+}
+#grid_title{
+	background-color: #007794;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 14px;
+}
+#img_title{
+	width: 35%
+}
+#text_title{
+	padding-left: 10px;
+    color: white;
+    font-weight: lighter;
+}
+#las_pu_fixed{
+	background-color: white;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+.button-md{
+	text-transform: none;
+}
+.dropdown {
+	position: relative;
+	display: inherit;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #3FBDEA;
+	min-width: 200px;
+	z-index: 1;
+	right: -15px;
+	top: 10px;
+}
+.dropdown-content a {
+	color: white;
+	padding: 10px 10px;
+	text-decoration: none;
+	display: block;
+}
+
+.no_b{
+	margin-bottom:0px;
+}
+
+.but_add{
+	width:60px;
+	height:60px;
+	border-radius:100%;
+	background:#3FBDEA;
+	right:0;
+	top:70px;
+	position:absolute;
+	margin-right:15px; 
+	border:none;
+	outline:none;
+	color:#FFF;
+	font-size:36px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	transition:.2s;
+}
+
+.img_avatar_ap{
+	width: 50px;
+	height: 50px;
+	border-radius: 100%; 	
+}
+
+.scroll-content {
+	padding-bottom: 0 !important;
+}
+
+#div_act::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+#div_act::-webkit-scrollbar-track {
+    width: 0px;
+    height: 0px;
+}
+
+#div_ob::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+#div_ob::-webkit-scrollbar-track {
+    width: 0px;
+    height: 0px;
+}

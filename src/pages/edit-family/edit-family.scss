@@ -1,0 +1,111 @@
+page-edit-family {
+	.space{
+		height: 10px
+	}
+
+	.item-md {
+	    background-color: transparent;
+	    color: #333;
+	    font-size: 14px;
+	    min-height: 2px;
+	    height: auto; 
+	}
+
+	.item_form{
+		background: white;
+    	border: solid 1px #999;
+    	background-color: white;
+    	border-radius: 7px;
+    	color: #999
+	}
+
+	.item-inner{
+		border-bottom: none !important;
+		border-bottom-color: transparent !important;
+		box-shadow: none !important;
+	}
+
+	.label_form{
+		width: 25px;
+	}
+
+	.label_form img{
+		width: 90%
+	}
+
+	.label_form_full{
+		width: 100%
+	}
+
+	.img_avatar{
+		width: 40%;
+	}
+
+	.list_schools{
+		height: 220px;
+		overflow: scroll;
+		background-color: white;
+		border: solid 1px #999;
+		border-radius: 5px;
+	}
+
+	.list_family{
+		height: auto;
+		background-color: white;
+		border: solid 1px #999;
+		border-radius: 5px;
+	}
+
+	.on-list-header{
+		margin-top: 0px !important;
+		border: none !important;
+    	text-align: left;
+    	padding: 0px;
+    	color: black;
+    	font-weight: 700;
+	}
+
+	.search_b{
+		padding: 0px;
+	}
+
+	.no_s{
+		display: none;
+	}
+
+	.item-radio-checked{
+		background-color: #999;
+	}
+	.item-radio-checked-2{
+		background-color: #999;
+	}
+
+	.radio-icon{
+		color:#333 !important;
+	}
+
+	#file_div{
+		background-color: #3FBDEA;
+    	width: 160px;
+    	height: 160px;
+    	color: white;
+    	border-radius: 100%;
+    	margin: auto;
+    	padding-top: 50px;
+	}
+
+	.file_input{
+		opacity: 0;
+	}
+
+	#img_preview{
+		position: absolute;
+    	top: 4px;
+    	width: 20%;
+    	left: 40%;
+	}
+
+	.m_t{
+		margin-bottom: 10px
+	}
+}

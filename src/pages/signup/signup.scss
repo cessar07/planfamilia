@@ -1,0 +1,82 @@
+page-signup {
+	#img_log{
+		width: 70%
+	}
+
+	#welcome{
+        background-image: url('../assets/imgs/fondox.png');
+        background-size: cover;
+        background-position: center 90%;
+    }
+
+    #form-login{
+		margin-top: 20px;
+		.item-input{
+			margin-bottom: 15px;
+		}
+		.item-md{
+			padding-left: 0px;
+		}
+	}
+
+	.input_form_new{
+		background: white;
+		color:black;
+		border: solid .5px #999;
+		box-shadow: none;
+		border-radius: 5px;
+	}
+
+	.div_img{
+		margin-top: -5%;
+		margin-bottom: -5%;
+		margin-left: -5%;
+	}
+
+	.item-inner{
+		border-bottom: none !important;
+		border-bottom-color: transparent !important;
+		box-shadow: none !important;
+	}
+
+	.label_form{
+		width: 25px;
+		margin-left: 7px;
+	}
+
+	.no_sha{
+		box-shadow: none;
+	}
+
+	.text_p{
+		color:#007794;
+	}
+
+	.toolbar-background-md {
+	    background-color: transparent;
+	}
+
+	.back-button{
+		background-color: transparent;
+		margin-left: -5px;
+	}
+
+	.back-button-icon{
+		color:#3FBDEA;
+	}
+
+	.item_text{
+		color: #999;
+		font-size: 15px;
+		font-weight: 600;
+		background-color: transparent;
+	}
+
+	.n-m{
+		margin-right:7px !important;
+	}
+
+	.space{
+		height:10px;
+	}
+}

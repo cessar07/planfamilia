@@ -1,0 +1,143 @@
+<!--
+  Generated template for the CretelistnotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-8>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding id="grid_title">
+            <ion-row no-padding align-items-center>
+                <ion-col col-2></ion-col>
+                <ion-col col-2 text-right>
+                    <img src="../../assets/imgs/notas.png" alt="" id="img_title">
+                </ion-col>
+                <ion-col col-8 text-left id="text_title">
+                    Crear nota tipo lista
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div>
+    	<ion-grid padding>
+    		<ion-row>
+    			<ion-col col-12>
+    				<form (ngSubmit)="addListNote()" id="form_add_list_note">
+				        <div class="space"></div>
+				      	<ion-item class="item_form">
+				        	<ion-label class="label_form">
+				        		<img src="../../assets/imgs/texto.png" alt="">
+				        	</ion-label>
+				        	<ion-input type="text" name="name" placeholder="Nombre de la nota" id="name_ob"></ion-input>
+				      	</ion-item>
+				      	<div class="space"></div>
+				      	<ion-row>
+				      		<ion-col col-8 no-padding>
+				      			<ion-item class="item_form">
+						        	<ion-label class="label_form">
+						        		<img src="../../assets/imgs/checkgris.png" alt="">
+						        	</ion-label>
+						        	<ion-input type="text" name="name_item" placeholder="Item de nota" id="name_i" [(ngModel)]="item_name_input"></ion-input>
+						      	</ion-item>
+						        <ion-input type="hidden" name="items[]" value="{{ items }}"></ion-input>
+				      		</ion-col>
+				      		<ion-col col-1></ion-col>
+				      		<ion-col col-3 no-padding>
+				      			<button ion-button type="button" block color="secondary" (click)="addItem()" class="add_it">Agregar</button>
+				      		</ion-col>
+				      	</ion-row>
+				      	<div class="space"></div>
+				      	<ion-row *ngFor="let item of items; let i = index">
+				      		<ion-col col-9 class="col_1">
+				      			{{item}}
+				      		</ion-col>
+				      		<ion-col col-3 class="col_2" (click)="borrarItem(i)">
+						    	<span>Remover</span>
+				      		</ion-col>
+						</ion-row>
+				        <div class="space"></div>
+                        <div text-left>
+                            <h4>Compartir con:</h4>
+                            <div *ngFor="let f of userFamilies">
+                                <h6 (click)="toggle(f)">{{ f.name }} +</h6>
+                                <ion-list class="no_s no_s_{{ f.id }}">
+                                    <ion-item class="item_form m_t" *ngFor="let fa of f.family">
+                                        <ion-label>{{ fa.userInfo.name }}</ion-label>
+                                        <ion-checkbox [(ngModel)]="fa.userInfo.status_select" (ionChange)="updateCucumber(fa.userInfo)" name="fami"></ion-checkbox>
+                                    </ion-item>
+                                    <ion-item class="item_form m_t" *ngFor="let fam of f.familyOther">
+                                        <ion-label>{{ fam.name }}</ion-label>
+                                        <ion-checkbox [(ngModel)]="fam.status_select" (ionChange)="updateCucumber(fam)" name="fami"></ion-checkbox>
+                                    </ion-item>
+                                </ion-list>
+                            </div>
+                            <div *ngFor="let f of userFamilyExt">
+                                <h6 (click)="toggle(f)">{{ f.familyInfo.name }} +</h6>
+                                <ion-list class="no_s no_s_{{ f.id }}">
+                                    <ion-item class="item_form m_t">
+                                        <ion-label>{{ f.adminInfo.name }}</ion-label>
+                                        <ion-checkbox [(ngModel)]="f.adminInfo.status_select" (ionChange)="updateCucumber(f.adminInfo)" name="fami"></ion-checkbox>
+                                    </ion-item>
+                                    <ion-item class="item_form m_t" *ngFor="let fa of f.family">
+                                        <ion-label>{{ fa.userInfo.name }}</ion-label>
+                                        <ion-checkbox [(ngModel)]="fa.userInfo.status_select" (ionChange)="updateCucumber(fa.userInfo)" name="fami"></ion-checkbox>
+                                    </ion-item>
+                                    <ion-item class="item_form m_t" *ngFor="let fa of f.familyOther">
+                                        <ion-label>{{ fa.name }}</ion-label>
+                                        <ion-checkbox [(ngModel)]="fa.status_select" (ionChange)="updateCucumber(fa)" name="fami"></ion-checkbox>
+                                    </ion-item>
+                                </ion-list>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                        <ion-input type="hidden" name="family_r" value="{{ family_r }}"></ion-input>
+				        <ion-input type="hidden" name="user_id" value="{{ userDetails.id }}"></ion-input>
+				        <button ion-button type="submit" block color="primary">Registrar nota tipo lista</button>
+				        <div class="space"></div>
+				    </form>
+    			</ion-col>
+    		</ion-row>
+    	</ion-grid>
+    </div>
+    <!-- <div id="las_pu">
+        <ion-grid no-padding id="grid3">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div> -->
+</ion-content>

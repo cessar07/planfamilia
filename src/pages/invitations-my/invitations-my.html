@@ -1,0 +1,90 @@
+<!--
+  Generated template for the InvitationsMyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-8>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col> 
+        </ion-row>
+    </ion-grid>
+</ion-header>
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding id="grid_title">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3></ion-col>
+                <ion-col col-2 text-right>
+                    <img src="../../assets/imgs/enviar.png" alt="" id="img_title">
+                </ion-col>
+                <ion-col col-7 text-left id="text_title">
+                    Invitaciones
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding>
+        	<ion-row align-items-center>
+                <ion-col col-12 text-center>
+                    <h5>Invitaciones para mi</h5>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding *ngFor="let p of InvitationMy" class="grid_bojetives">
+            <ion-row padding-left padding-right align-items-center>
+                <ion-col col-9 text-left>
+                    <p class="date_ob">
+                        <b>Invitación de:</b>
+                    </p>
+                    <h6 class="title_ob">
+                        {{ p.adminInfo.name }}
+                    </h6>
+                    <p class="date_ob">
+                        <b>Para la familia:</b>
+                    </p>
+                    <h6 class="title_ob">
+                        {{ p.familyInfo.name }}
+                    </h6>
+                </ion-col>
+                <ion-col col-3 text-center>
+                    <p class="text-danger" *ngIf="p.status == 0">
+                        <b>{{ p.statusText }}</b>
+                    </p>
+                    <button ion-button color="secondary" class="dan" *ngIf="p.status == 0" (click)="Rech(p)" style="margin-bottom: 15px">Rechazar</button>
+                    <button ion-button color="secondary" class="dan2" *ngIf="p.status == 0" (click)="Acep(p)">Aceptar</button>
+                    <p class="text-success" *ngIf="p.status != 0">
+                        <b>{{ p.statusText }}</b>
+                    </p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid id="no_results" *ngIf="InvitationMy && InvitationMy.length < 1">
+            <ion-row padding-left align-items-center>
+                <ion-col col-12 text-center>
+                    <h3>
+                        Sin Invitaciones encontradas<br>
+                    </h3>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

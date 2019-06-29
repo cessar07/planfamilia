@@ -1,0 +1,84 @@
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-8>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding id="grid_title">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3></ion-col>
+                <ion-col col-2 text-right>
+                    <img src="../../assets/imgs/notas.png" alt="" id="img_title">
+                </ion-col>
+                <ion-col col-7 text-left id="text_title">
+                    Notas
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div class="contenedor" (click)="createListNote()">
+            <button class="but_add">
+              <span>+</span>
+            </button>
+        </div>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <h5>Notas tipo lista</h5>
+                </ion-col>
+                <ion-col col-12 text-center *ngIf="userListNotes && userListNotes.length < 1">
+                    <h6>
+                        Sin Notas
+                    </h6>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding *ngFor="let p of userListNotes" class="grid_bojetives">
+            <ion-row padding-left align-items-center (click)="viewNoteList(p)">
+                <ion-col col-9 text-left>
+                    <p class="date_ob">
+                        <b>{{ p.format_created_date }}</b>
+                    </p>
+                    <h6 class="title_ob">
+                        {{ p.name }}
+                    </h6>
+                    <p *ngFor="let it of p.get_items" class="p_items">
+                        -{{ it.item }}
+                    </p>
+                </ion-col>
+                <ion-col col-3>
+                    <b>Nota tipo lista</b>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row align-items-center>
+                <!-- <ion-col col-6 text-center>
+                    <button ion-button full color="secondary" (click)="createListNote()">Crear lista</button>
+                </ion-col> -->
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+

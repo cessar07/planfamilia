@@ -1,0 +1,87 @@
+page-home {
+	.icon-2{
+		font-size: 3.2em;
+		color:#488aff;
+	}
+	#h6-n{
+		margin-top: 0px;
+   		font-size: 0.9em;
+    	margin-bottom: 0px;
+	}
+	#div-list-activities{
+		background-color: #f2f2f2;
+		min-height: 280px;
+		margin-top: -10px
+	}
+	#but_add{
+		box-shadow: none;
+    	font-weight: normal;
+	}
+	.but_add2{
+		box-shadow: none;
+    	font-weight: normal;
+    	text-transform: none;
+	}
+	#div-list-obj{
+		background-color: #f2f2f2;
+		height: 250px;
+    	overflow: scroll;
+	}
+	.icon-2new{
+		color:#488aff;
+	}
+	.p_ob{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-size: smaller;
+	}
+	.ob_dd{
+		padding-bottom: 0px;
+		margin-bottom: -5px;
+	}
+	.row_ob{
+		margin-top: 0px;
+    	margin-bottom: -10px;
+	}
+
+	#div_ob{
+		background-color: #f2f2f2;
+	    height: 250px;
+	    overflow: scroll;
+	}
+
+	#div_act{
+		background-color: #f2f2f2;
+	    height: 250px;
+	    overflow: scroll;
+	}
+	.row_ob{
+		border-bottom: solid 1px #999;
+		margin-bottom: 5px;
+	}
+	.img_ob{
+		position: absolute;
+    	top: 7%;
+    	width: 25%;
+    	right: 5px;
+	}
+
+	.no_re{
+		color: #3FBDEA;
+    	font-size: 20px;
+    	text-align: center;
+	}
+
+	.no_re_c{
+		color: #3FBDEA;
+    	font-size: 20px;
+    	text-align: center;
+    	margin-top: 15px;
+	}
+
+	.div_ava{
+		width: 60px;
+    	height: 60px;
+    	background-size: cover;
+	}
+}

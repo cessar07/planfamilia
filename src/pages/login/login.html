@@ -1,0 +1,33 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header id="head">
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col col-10 text-left>
+                <img src="../../assets/imgs/logolargoblanco.png" id="img_log">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content padding id="login">
+    <div id="div_h"></div>
+    <form (ngSubmit)="logForm()" id="form-login">
+        <div class="space"></div>
+      	<ion-item class="input_form_new">
+        	<ion-input type="text" name="email" placeholder="Email"></ion-input>
+      	</ion-item>
+      	<ion-item class="input_form_new">
+        	<ion-input type="password" name="password" placeholder="Contraseña"></ion-input>
+      	</ion-item>
+        <button ion-button type="submit" block color="secondary">Ingresar</button>
+    </form> 
+</ion-content>
+

@@ -1,0 +1,223 @@
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-3>
+                <button ion-button menuToggle>
+                    <ion-icon name="menu"></ion-icon> 
+                </button>
+            </ion-col>
+            <ion-col class="div_img" col-6>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col>
+            <ion-col class="div_img" col-3 (click)="showMenu()">
+               <!--  <img src="../../assets/imgs/avatar0.png" id="img_user" *ngIf="!userDetails.avatar">
+                <img src="{{ userDetails.avatar }}" id="img_user" *ngIf="userDetails.avatar"> -->
+                <div id="div_ava"></div>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <ion-item (click)="myPerfil()">
+                            <img src="../../assets/imgs/miperfil.png" class="img_menu"> <span class="span_menu">Mi perfil</span>
+                        </ion-item>
+                        <ion-item (click)="myFamily()" *ngIf="userDetails && userDetails.younger != 1">
+                            <img src="../../assets/imgs/mifamilia.png" class="img_menu"> <span class="span_menu">Mi familia</span>
+                        </ion-item>
+                        <ion-item (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+                            <img src="../../assets/imgs/mifamilia.png" class="img_menu"> <span class="span_menu">Mi familia</span>
+                        </ion-item>
+                        <hr class="no_b">
+                        <ion-item (click)="selectUser()">
+                            <img src="../../assets/imgs/cambiarusu.png" class="img_menu"> <span class="span_menu">Cambiar usuario</span>
+                        </ion-item>
+                        <!-- <ion-item (click)="infoSend()" *ngIf="userDetails && userDetails.younger != 1">
+                            <img src="../../assets/imgs/enviar.png" class="img_menu"> <span class="span_menu">Invitar usuario</span>
+                        </ion-item> -->
+                        <!-- <ion-item (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+                            <img src="../../assets/imgs/enviar.png" class="img_menu"> <span class="span_menu">Invitar usuario</span>
+                        </ion-item> -->
+                        <hr class="no_b">
+                        <ion-item (click)="logout()" *ngIf="userDetails && userDetails.younger != 1">
+                            <img src="../../assets/imgs/salir.png" class="img_menu"> <span class="span_menu">Salir</span>
+                        </ion-item>
+                        <ion-item (click)="actBlock2()" *ngIf="userDetails && userDetails.younger == 1">
+                            <img src="../../assets/imgs/salir.png" class="img_menu"> <span class="span_menu">Salir</span>
+                        </ion-item>
+                    </div>
+                </div>
+            </ion-col> 
+        </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid padding-left padding-right>
+            <ion-row padding-left padding-right align-items-center>
+                <ion-col col-2 padding-left text-right>
+                    <img src="../../assets/imgs/calendarioazul.png" width="50">
+                </ion-col>
+                <ion-col col-4 text-left>
+                    <b>Actividades</b>
+                    <h6 id="h6-n"><b>{{ tody_date }}</b></h6> 
+                </ion-col>
+                <ion-col col-6 text-right padding-right (click)="updateAct()" *ngIf="userDetails && userDetails.younger != 1">
+                    <img src="../../assets/imgs/actualizarazul.png" width="45">
+                </ion-col>
+                <ion-col col-6 text-right padding-right (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+                    <img src="../../assets/imgs/actualizarazul.png" width="45">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid padding-left padding-right>
+            <ion-row padding-left padding-right align-items-center>
+                <ion-col col-12 padding-left id="div-list-activities">
+                    <div id="div_act">
+                        <ion-row align-items-center *ngFor="let p of userActivity" class="row_ob">
+                            <ion-col col-2> 
+                                <img src="../../assets/imgs/bulletazul.png" width="100%" *ngIf="p.name === 'Entrada al colegio' || p.name === 'Salida del colegio' || p.name === 'Comida del colegio' && p.user_id === userDetails.id">
+                                <img src="../../assets/imgs/bulletroja.png" width="100%" *ngIf="p.name !== 'Entrada al colegio' && p.name !== 'Salida del colegio' && p.name !== 'Comida del colegio' && p.user_id === userDetails.id">
+                                <img src="../../assets/imgs/bulletverde.png" width="100%" *ngIf="p.name !== 'Entrada al colegio' && p.name !== 'Salida del colegio' && p.name !== 'Comida del colegio' && p.user_id !== userDetails.id">
+                            </ion-col>
+                            <ion-col col-10 (click)="viewAct(p)">
+                                <p class="p_ob">
+                                    <b>{{ p.name }}</b>
+                                </p>
+                                <p class="p_ob">
+                                    <b>{{ p.format_date }} {{ p.limit_hour }}</b>
+                                </p>
+                            </ion-col>
+                        </ion-row>
+                        <p class="no_re" *ngIf="userActivity && userActivity.length < 1">Sin Datos</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row padding-left padding-right align-items-center>
+                <button ion-button full color="secondary" id="but_add" (click)="addAct()" *ngIf="userDetails && userDetails.younger != 1">Agregar actividad</button>
+                <button ion-button full color="secondary" id="but_add" (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">Agregar actividad</button>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-row align-items-center>
+                        <ion-col col-3 text-right>
+                            <img src="../../assets/imgs/objpersonalesazul.png" width="100%">
+                        </ion-col>
+                        <ion-col col-9>
+                            <b>Objetivos <br> personales</b>
+                            <img src="../../assets/imgs/actualizarazul.png" class="img_ob" (click)="updatePer()" *ngIf="userDetails && userDetails.younger != 1">
+                            <img src="../../assets/imgs/actualizarazul.png" class="img_ob" (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+                        </ion-col>
+                    </ion-row>
+                    <div id="div_ob">
+                        <ion-row align-items-center *ngFor="let p of userPerOb" class="row_ob">
+                            <ion-col col-2>
+                                <img src="../../assets/imgs/bulletnegra.png" alt="" width="100%" *ngIf="p.status == 0">
+                                <img src="../../assets/imgs/bulletverde.png" alt="" width="100%" *ngIf="p.status != 0">
+                            </ion-col>
+                            <ion-col col-10 (click)="editOb(p)" *ngIf="p.status == 0">
+                                <p class="p_ob">
+                                    <b>{{ p.format_date }} {{ p.limit_hour }}</b>
+                                </p>
+                                <p class="p_ob">
+                                    {{ p.name }}
+                                </p>
+                            </ion-col>
+                            <ion-col col-10 (click)="viewOb(p)" *ngIf="p.status != 0">
+                                <p class="p_ob">
+                                    <b>{{ p.format_date }} {{ p.limit_hour }}</b>
+                                </p>
+                                <p class="p_ob">
+                                    {{ p.name }}
+                                </p>
+                            </ion-col>
+                        </ion-row>
+                        <p class="no_re" *ngIf="userPerOb && userPerOb.length < 1">Sin Datos</p>
+                    </div>
+                    <ion-row align-items-center>
+                        <button ion-button full color="secondary" class="but_add2" (click)="createPersonalOb()" *ngIf="userDetails && userDetails.younger != 1">Agregar objetivo</button>
+                        <button ion-button full color="secondary" class="but_add2" (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">Agregar objetivo</button>
+                    </ion-row>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-row align-items-center>
+                        <ion-col col-3 text-right>
+                            <img src="../../assets/imgs/objcompartidosazul.png" width="100%">
+                        </ion-col>
+                        <ion-col col-9>
+                            <b>Objetivos <br>compartidos</b>
+                            <img src="../../assets/imgs/actualizarazul.png" class="img_ob" (click)="updateSha()" *ngIf="userDetails && userDetails.younger != 1">
+                            <img src="../../assets/imgs/actualizarazul.png" class="img_ob" (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">
+                        </ion-col>
+                    </ion-row>
+                    <div id="div_ob">
+                        <ion-row align-items-center *ngFor="let p of userShaOb" class="row_ob">
+                            <ion-col col-2>
+                                <img src="../../assets/imgs/bulletnegra.png" alt="" width="100%" *ngIf="p.status == 0 && p.user_id != userDetails.id">
+                                <img src="../../assets/imgs/bulletroja.png" alt="" width="100%" *ngIf="p.status == 0 && p.user_id == userDetails.id">
+                                <img src="../../assets/imgs/bulletverde.png" alt="" width="100%" *ngIf="p.status != 0">
+                            </ion-col>
+                            <ion-col col-10 (click)="editShaOb(p)" *ngIf="p.status == 0 && userDetails && userDetails.younger != 1 && p.user_id == userDetails.id">
+                                <p class="p_ob">
+                                    <b>{{ p.format_date }} {{ p.limit_hour }}</b>
+                                </p>
+                                <p class="p_ob">
+                                    {{ p.name }}
+                                </p>
+                            </ion-col>
+                            <ion-col col-10 (click)="viewShaOb(p)" *ngIf="p.status == 0 && userDetails && userDetails.younger == 1">
+                                <p class="p_ob">
+                                    <b>{{ p.format_date }} {{ p.limit_hour }}</b>
+                                </p>
+                                <p class="p_ob">
+                                    {{ p.name }}
+                                </p>
+                            </ion-col>
+                            <ion-col col-10 (click)="viewShaOb(p)" *ngIf="p.status != 0 || p.user_id != userDetails.id && userDetails && userDetails.younger != 1">
+                                <p class="p_ob">
+                                    <b>{{ p.format_date }} {{ p.limit_hour }}</b>
+                                </p>
+                                <p class="p_ob">
+                                    {{ p.name }}
+                                </p>
+                            </ion-col>
+                        </ion-row>
+                        <p class="no_re" *ngIf="userShaOb && userShaOb.length < 1">Sin Datos</p>
+                    </div>
+                    <ion-row align-items-center>
+                        <button ion-button full color="secondary" class="but_add2" (click)="createSharedOb()" *ngIf="userDetails && userDetails.younger != 1">Agregar objetivo</button>
+                        <button ion-button full color="secondary" class="but_add2" (click)="actBlock()" *ngIf="userDetails && userDetails.younger == 1">Agregar objetivo</button>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div id="las_pu">
+        <ion-grid no-padding id="grid3">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+

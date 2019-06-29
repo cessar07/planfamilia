@@ -1,0 +1,114 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>personalOb</ion-title>
+  </ion-navbar>
+</ion-header> -->
+<ion-header id="head"> 
+    <ion-grid>
+        <ion-row align-items-center>
+            <ion-col col-2 text-left>
+                <ion-navbar></ion-navbar>
+            </ion-col>
+            <ion-col class="div_img" col-8>
+                <img src="../../assets/imgs/logolargoblanco.png" class="logo_imm">
+            </ion-col> 
+        </ion-row>
+    </ion-grid>
+</ion-header>
+<ion-content id="bod">
+    <div no-padding>
+        <ion-grid no-padding id="grid2">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid no-padding id="grid_title">
+            <ion-row no-padding align-items-center>
+                <ion-col col-2></ion-col>
+                <ion-col col-2 text-right>
+                    <img src="../../assets/imgs/objpersonales.png" alt="" id="img_title">
+                </ion-col>
+                <ion-col col-8 text-left id="text_title">
+                    Objetivos personales
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div class="contenedor" (click)="createPersonalOb()">
+            <button class="but_add">
+              <span>+</span>
+            </button>
+        </div>
+        <ion-grid no-padding *ngFor="let p of userPerOb" class="grid_bojetives">
+            <ion-row padding-left align-items-center (click)="editOb(p)" *ngIf="p.status == 0">
+                <ion-col col-9 text-left>
+                    <p class="date_ob">
+                        <b>{{ p.format_date }}</b>
+                    </p>
+                    <h6 class="title_ob">
+                        {{ p.name }}
+                    </h6>
+                    <small>{{ p.description }}</small>
+                </ion-col>
+                <ion-col col-3 text-center>
+                    <p class="text-danger" *ngIf="p.status == 0">
+                        <b>{{ p.statusText }}</b>
+                    </p>
+                    <p class="text-success" *ngIf="p.status != 0">
+                        <b>{{ p.statusText }}</b>
+                    </p>
+                </ion-col>
+            </ion-row>
+            <ion-row padding-left align-items-center (click)="viewOb(p)" *ngIf="p.status != 0">
+                <ion-col col-9 text-left>
+                    <p class="date_ob">
+                        <b>{{ p.format_complete_date }}</b>
+                    </p>
+                    <h6 class="title_ob">
+                        {{ p.name }}
+                    </h6>
+                    <small>{{ p.description }}</small>
+                </ion-col>
+                <ion-col col-3 text-center>
+                    <p class="text-danger" *ngIf="p.status == 0">
+                        <b>{{ p.statusText }}</b>
+                    </p>
+                    <p class="text-success" *ngIf="p.status != 0">
+                        <b>{{ p.statusText }}</b>
+                    </p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid id="no_results" *ngIf="userPerOb.length < 1">
+            <ion-row padding-left align-items-center>
+                <ion-col col-12 text-center>
+                    <h3>
+                        Sin objetivos personales <br>
+                    </h3>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <!-- <div id="las_pu">
+        <ion-grid no-padding id="grid3">
+            <ion-row no-padding align-items-center>
+                <ion-col col-3 id="pad-5">
+                    <p>Nice job</p>
+                </ion-col>
+                <ion-col class="div_img" col-6>
+                    <p>This is a 468x60 test ad.</p>
+                </ion-col>
+                <ion-col class="div_img" col-3>
+                    <img src="../../assets/imgs/tab2@3x.png" class="img_icon">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div> -->
+</ion-content>

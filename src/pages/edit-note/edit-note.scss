@@ -1,0 +1,62 @@
+page-edit-note {
+	.space{
+		height: 10px
+	}
+
+	.item-md {
+	    background-color: transparent;
+	    color: white;
+	    font-size: 14px;
+	    min-height: 2px;
+	    height: auto; 
+	}
+
+	.item_form{
+		background: white;
+    	border: solid 1px #999;
+    	background-color: white;
+    	border-radius: 7px;
+    	color: #999
+	}
+
+	.item-inner{
+		border-bottom: none !important;
+		border-bottom-color: transparent !important;
+		box-shadow: none !important;
+	}
+
+	.label_form{
+		width: 25px;
+	}
+
+	.label_form img{
+		width: 90%
+	}
+
+	.label_form_full{
+		width: 100%
+	}
+	#b_d{
+		background-color: #FF0000;
+	}
+
+	.on-list-header{
+		margin-top: 0px;
+    	border: none !important;
+    	color: #333;
+    	margin-bottom: 0px;
+    	text-align: left;
+	}
+
+	.m_5{
+		margin-bottom:5px;
+	}
+	
+	.m_t{
+		margin-bottom: 10px;
+	}
+
+	.no_s{
+		display: none;
+	}
+}
